@@ -256,6 +256,7 @@ li.tree-item>ul.tree-children>li.tree-item::before{content:'';position:absolute;
 .modal-actions .btn-outline{flex:1}
 .chapter-color-bar{height:4px;border-radius:2px;margin-bottom:16px}
 </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <div class="bg-orbs">
@@ -425,6 +426,13 @@ li.tree-item>ul.tree-children>li.tree-item::before{content:'';position:absolute;
 // ════════════════════════════════════════
 //  DATA STORE (localStorage)
 // ════════════════════════════════════════
+// ── Supabase Config ──────────────────────
+const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';  // ← paste yours
+const SUPABASE_KEY = 'eyJ...YOUR-ANON-KEY...';            // ← paste yours
+
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+// ── Keep localStorage as offline fallback ─
 const STORE_KEY = 'rh_notes';
 const META_KEY  = 'rh_meta';
 
